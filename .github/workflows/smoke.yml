@@ -1,0 +1,16 @@
+name: Smoke Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Text message to echo back'
+        required: true
+        type: string
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo the message
+        run: echo "${{ inputs.message }}"
